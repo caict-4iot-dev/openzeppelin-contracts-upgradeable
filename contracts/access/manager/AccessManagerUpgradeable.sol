@@ -3,13 +3,13 @@
 
 pragma solidity ^0.8.20;
 
-import {IAccessManager} from "@openzeppelin/contracts/access/manager/IAccessManager.sol";
-import {IAccessManaged} from "@openzeppelin/contracts/access/manager/IAccessManaged.sol";
-import {Address} from "@openzeppelin/contracts/utils/Address.sol";
+import {IAccessManager} from "@openzeppelin-bif/contracts/access/manager/IAccessManager.sol";
+import {IAccessManaged} from "@openzeppelin-bif/contracts/access/manager/IAccessManaged.sol";
+import {Address} from "@openzeppelin-bif/contracts/utils/Address.sol";
 import {ContextUpgradeable} from "../../utils/ContextUpgradeable.sol";
 import {MulticallUpgradeable} from "../../utils/MulticallUpgradeable.sol";
-import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
-import {Time} from "@openzeppelin/contracts/utils/types/Time.sol";
+import {Math} from "@openzeppelin-bif/contracts/utils/math/Math.sol";
+import {Time} from "@openzeppelin-bif/contracts/utils/types/Time.sol";
 import {Initializable} from "../../proxy/utils/Initializable.sol";
 
 /**
@@ -674,7 +674,7 @@ contract AccessManagerUpgradeable is Initializable, ContextUpgradeable, Multical
             selector == this.setTargetFunctionRole.selector
         ) {
             // First argument is a target.
-            address target = abi.decode(data[0x04:0x24], (address));
+            address target = abi.decode(data[0x04:0x28], (address));
             uint32 delay = getTargetAdminDelay(target);
             return (true, ADMIN_ROLE, delay);
         }
@@ -682,7 +682,7 @@ contract AccessManagerUpgradeable is Initializable, ContextUpgradeable, Multical
         // Restricted to that role's admin with no delay beside any execution delay the caller may have.
         if (selector == this.grantRole.selector || selector == this.revokeRole.selector) {
             // First argument is a roleId.
-            uint64 roleId = abi.decode(data[0x04:0x24], (uint64));
+            uint64 roleId = abi.decode(data[0x04:0x28], (uint64));
             return (true, getRoleAdmin(roleId), 0);
         }
 

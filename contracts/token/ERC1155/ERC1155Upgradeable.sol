@@ -3,14 +3,14 @@
 
 pragma solidity ^0.8.20;
 
-import {IERC1155} from "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
-import {IERC1155Receiver} from "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
-import {IERC1155MetadataURI} from "@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol";
+import {IERC1155} from "@openzeppelin-bif/contracts/token/ERC1155/IERC1155.sol";
+import {IERC1155Receiver} from "@openzeppelin-bif/contracts/token/ERC1155/IERC1155Receiver.sol";
+import {IERC1155MetadataURI} from "@openzeppelin-bif/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol";
 import {ContextUpgradeable} from "../../utils/ContextUpgradeable.sol";
-import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import {IERC165} from "@openzeppelin-bif/contracts/utils/introspection/IERC165.sol";
 import {ERC165Upgradeable} from "../../utils/introspection/ERC165Upgradeable.sol";
-import {Arrays} from "@openzeppelin/contracts/utils/Arrays.sol";
-import {IERC1155Errors} from "@openzeppelin/contracts/interfaces/draft-IERC6093.sol";
+import {Arrays} from "@openzeppelin-bif/contracts/utils/Arrays.sol";
+import {IERC1155Errors} from "@openzeppelin-bif/contracts/interfaces/draft-IERC6093.sol";
 import {Initializable} from "../../proxy/utils/Initializable.sol";
 
 /**

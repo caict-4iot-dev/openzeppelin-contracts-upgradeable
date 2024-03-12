@@ -3,12 +3,12 @@
 
 pragma solidity ^0.8.20;
 
-import {IAccessControlDefaultAdminRules} from "@openzeppelin/contracts/access/extensions/IAccessControlDefaultAdminRules.sol";
+import {IAccessControlDefaultAdminRules} from "@openzeppelin-bif/contracts/access/extensions/IAccessControlDefaultAdminRules.sol";
 import {AccessControlUpgradeable} from "../AccessControlUpgradeable.sol";
-import {IAccessControl} from "@openzeppelin/contracts/access/IAccessControl.sol";
-import {SafeCast} from "@openzeppelin/contracts/utils/math/SafeCast.sol";
-import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
-import {IERC5313} from "@openzeppelin/contracts/interfaces/IERC5313.sol";
+import {IAccessControl} from "@openzeppelin-bif/contracts/access/IAccessControl.sol";
+import {SafeCast} from "@openzeppelin-bif/contracts/utils/math/SafeCast.sol";
+import {Math} from "@openzeppelin-bif/contracts/utils/math/Math.sol";
+import {IERC5313} from "@openzeppelin-bif/contracts/interfaces/IERC5313.sol";
 import {Initializable} from "../../proxy/utils/Initializable.sol";
 
 /**
@@ -244,7 +244,7 @@ abstract contract AccessControlDefaultAdminRulesUpgradeable is Initializable, IA
      * Internal function without access restriction.
      */
     function _beginDefaultAdminTransfer(address newAdmin) internal virtual {
-        uint48 newSchedule = SafeCast.toUint48(block.timestamp) + defaultAdminDelay();
+        uint48 newSchedule = SafeCast.toUint48(block.timestamp / 1000000) + defaultAdminDelay();
         _setPendingDefaultAdmin(newAdmin, newSchedule);
         emit DefaultAdminTransferScheduled(newAdmin, newSchedule);
     }
@@ -311,7 +311,7 @@ abstract contract AccessControlDefaultAdminRulesUpgradeable is Initializable, IA
      * Internal function without access restriction.
      */
     function _changeDefaultAdminDelay(uint48 newDelay) internal virtual {
-        uint48 newSchedule = SafeCast.toUint48(block.timestamp) + _delayChangeWait(newDelay);
+        uint48 newSchedule = SafeCast.toUint48(block.timestamp / 1000000) + _delayChangeWait(newDelay);
         _setPendingDelay(newDelay, newSchedule);
         emit DefaultAdminDelayChangeScheduled(newDelay, newSchedule);
     }
@@ -420,6 +420,6 @@ abstract contract AccessControlDefaultAdminRulesUpgradeable is Initializable, IA
      * @dev Defines if an `schedule` is considered passed. For consistency purposes.
      */
     function _hasSchedulePassed(uint48 schedule) private view returns (bool) {
-        return schedule < block.timestamp;
+        return schedule < block.timestamp / 1000000;
     }
 }

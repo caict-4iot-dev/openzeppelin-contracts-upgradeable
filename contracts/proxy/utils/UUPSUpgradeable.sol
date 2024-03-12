@@ -3,8 +3,8 @@
 
 pragma solidity ^0.8.20;
 
-import {IERC1822Proxiable} from "@openzeppelin/contracts/interfaces/draft-IERC1822.sol";
-import {ERC1967Utils} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils.sol";
+import {IERC1822Proxiable} from "@openzeppelin-bif/contracts/interfaces/draft-IERC1822.sol";
+import {ERC1967Utils} from "@openzeppelin-bif/contracts/proxy/ERC1967/ERC1967Utils.sol";
 import {Initializable} from "./Initializable.sol";
 
 /**

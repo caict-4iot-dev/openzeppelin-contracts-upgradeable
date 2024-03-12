@@ -357,62 +357,7 @@ contract EtherReceiverMockUpgradeableWithInit is EtherReceiverMockUpgradeable {
         __EtherReceiverMock_init();
     }
 }
-import "./governance/GovernorMockUpgradeable.sol";
 
-contract GovernorMockUpgradeableWithInit is GovernorMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorMock_init();
-    }
-}
-import "./governance/GovernorPreventLateQuorumMockUpgradeable.sol";
-
-contract GovernorPreventLateQuorumMockUpgradeableWithInit is GovernorPreventLateQuorumMockUpgradeable {
-    constructor(uint256 quorum_) payable initializer {
-        __GovernorPreventLateQuorumMock_init(quorum_);
-    }
-}
-import "./governance/GovernorStorageMockUpgradeable.sol";
-
-contract GovernorStorageMockUpgradeableWithInit is GovernorStorageMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorStorageMock_init();
-    }
-}
-import "./governance/GovernorTimelockAccessMockUpgradeable.sol";
-
-contract GovernorTimelockAccessMockUpgradeableWithInit is GovernorTimelockAccessMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorTimelockAccessMock_init();
-    }
-}
-import "./governance/GovernorTimelockCompoundMockUpgradeable.sol";
-
-contract GovernorTimelockCompoundMockUpgradeableWithInit is GovernorTimelockCompoundMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorTimelockCompoundMock_init();
-    }
-}
-import "./governance/GovernorTimelockControlMockUpgradeable.sol";
-
-contract GovernorTimelockControlMockUpgradeableWithInit is GovernorTimelockControlMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorTimelockControlMock_init();
-    }
-}
-import "./governance/GovernorVoteMockUpgradeable.sol";
-
-contract GovernorVoteMocksUpgradeableWithInit is GovernorVoteMocksUpgradeable {
-    constructor() payable initializer {
-        __GovernorVoteMocks_init();
-    }
-}
-import "./governance/GovernorWithParamsMockUpgradeable.sol";
-
-contract GovernorWithParamsMockUpgradeableWithInit is GovernorWithParamsMockUpgradeable {
-    constructor() payable initializer {
-        __GovernorWithParamsMock_init();
-    }
-}
 import "./MulticallTestUpgradeable.sol";
 
 contract MulticallTestUpgradeableWithInit is MulticallTestUpgradeable {
