@@ -25,11 +25,8 @@
 ## Overview
 
 ### Installation
-
-#### Hardhat, Truffle (npm)
-
 ```
-$ npm install @openzeppelin/contracts-upgradeable
+$ npm install @openzeppelin-bif/contracts-upgradeable
 ```
 
 #### Foundry (git)
@@ -41,10 +38,10 @@ $ npm install @openzeppelin/contracts-upgradeable
 > Foundry installs the latest version initially, but subsequent `forge update` commands will use the `master` branch.
 
 ```
-$ forge install OpenZeppelin/openzeppelin-contracts-upgradeable
+$ forge install maxufeng/openzeppelin-contracts-upgradeable
 ```
 
-Add `@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/` in `remappings.txt.` 
+Add `@openzeppelin-bif/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/` in `remappings.txt.` 
 
 ### Usage
 
@@ -53,7 +50,7 @@ Once installed, you can use the contracts in the library by importing them:
 ```solidity
 pragma solidity ^0.8.20;
 
-import {ERC721Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import {ERC721Upgradeable} from "@openzeppelin-bif/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 
 contract MyCollectible is ERC721Upgradeable {
     function initialize() initializer public {
