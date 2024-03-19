@@ -23,7 +23,6 @@ import {ERC721HolderUpgradeable} from "../token/ERC721/utils/ERC721HolderUpgrade
 import {Math} from "@openzeppelin-bif/contracts/utils/math/Math.sol";
 import {MerkleProof} from "@openzeppelin-bif/contracts/utils/cryptography/MerkleProof.sol";
 import {SafeCast} from "@openzeppelin-bif/contracts/utils/math/SafeCast.sol";
-import {SafeERC20} from "@openzeppelin-bif/contracts/token/ERC20/utils/SafeERC20.sol";
 import {ShortStrings} from "@openzeppelin-bif/contracts/utils/ShortStrings.sol";
 import {SignedMath} from "@openzeppelin-bif/contracts/utils/math/SignedMath.sol";
 import {StorageSlot} from "@openzeppelin-bif/contracts/utils/StorageSlot.sol";
