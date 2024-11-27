@@ -6,11 +6,10 @@ import {IERC165} from "@openzeppelin-bif/contracts/utils/introspection/IERC165.s
 import {Initializable} from "../../proxy/utils/Initializable.sol";
 
 contract ERC165ReturnBombMockUpgradeable is Initializable, IERC165 {
-    function __ERC165ReturnBombMock_init() internal onlyInitializing {
-    }
+    function __ERC165ReturnBombMock_init() internal onlyInitializing {}
 
-    function __ERC165ReturnBombMock_init_unchained() internal onlyInitializing {
-    }
+    function __ERC165ReturnBombMock_init_unchained() internal onlyInitializing {}
+
     function supportsInterface(bytes4 interfaceId) public pure override returns (bool) {
         if (interfaceId == type(IERC165).interfaceId) {
             assembly {

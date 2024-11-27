@@ -20,11 +20,10 @@ import {Initializable} from "../proxy/utils/Initializable.sol";
  * {_msgSender} are not propagated to subcalls.
  */
 abstract contract MulticallUpgradeable is Initializable, ContextUpgradeable {
-    function __Multicall_init() internal onlyInitializing {
-    }
+    function __Multicall_init() internal onlyInitializing {}
 
-    function __Multicall_init_unchained() internal onlyInitializing {
-    }
+    function __Multicall_init_unchained() internal onlyInitializing {}
+
     /**
      * @dev Receives and executes a batch of function calls on this contract.
      * @custom:oz-upgrades-unsafe-allow-reachable delegatecall

@@ -1,2 +1,2 @@
-@openzeppelin/contracts-upgradeable/=contracts/
-@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
+@openzeppelin-bif/contracts-upgradeable/=contracts/
+@openzeppelin-bif/contracts/=lib/openzeppelin-contracts/contracts/

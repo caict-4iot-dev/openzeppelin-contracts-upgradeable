@@ -39,7 +39,8 @@ abstract contract ERC721ConsecutiveUpgradeable is Initializable, IERC2309, ERC72
     }
 
     // keccak256(abi.encode(uint256(keccak256("openzeppelin.storage.ERC721Consecutive")) - 1)) & ~bytes32(uint256(0xff))
-    bytes32 private constant ERC721ConsecutiveStorageLocation = 0x24de1071a22e1e6f709b09cc0dadb696f919b85b456665cd36195df4bc89ff00;
+    bytes32 private constant ERC721ConsecutiveStorageLocation =
+        0x24de1071a22e1e6f709b09cc0dadb696f919b85b456665cd36195df4bc89ff00;
 
     function _getERC721ConsecutiveStorage() private pure returns (ERC721ConsecutiveStorage storage $) {
         assembly {
@@ -69,11 +70,10 @@ abstract contract ERC721ConsecutiveUpgradeable is Initializable, IERC2309, ERC72
      */
     error ERC721ForbiddenBatchBurn();
 
-    function __ERC721Consecutive_init() internal onlyInitializing {
-    }
+    function __ERC721Consecutive_init() internal onlyInitializing {}
 
-    function __ERC721Consecutive_init_unchained() internal onlyInitializing {
-    }
+    function __ERC721Consecutive_init_unchained() internal onlyInitializing {}
+
     /**
      * @dev Maximum size of a batch of consecutive tokens. This is designed to limit stress on off-chain indexing
      * services that have to record one entry per token, and have protections against "unreasonably large" batches of
@@ -101,7 +101,8 @@ abstract contract ERC721ConsecutiveUpgradeable is Initializable, IERC2309, ERC72
 
         // Otherwise, check the token was not burned, and fetch ownership from the anchors
         // Note: no need for safe cast, we know that tokenId <= type(uint64).max
-        return $._sequentialBurn.get(tokenId) ? address(0) : address($._sequentialOwnership.lowerLookup(uint64(tokenId)));
+        return
+            $._sequentialBurn.get(tokenId) ? address(0) : address($._sequentialOwnership.lowerLookup(uint64(tokenId)));
     }
 
     /**

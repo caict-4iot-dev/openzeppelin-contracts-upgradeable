@@ -30,9 +30,8 @@ import {Strings} from "@openzeppelin-bif/contracts/utils/Strings.sol";
 import {Time} from "@openzeppelin-bif/contracts/utils/types/Time.sol";
 import {Initializable} from "../proxy/utils/Initializable.sol";
 
-contract Dummy1234Upgradeable is Initializable {    function __Dummy1234_init() internal onlyInitializing {
-    }
+contract Dummy1234Upgradeable is Initializable {
+    function __Dummy1234_init() internal onlyInitializing {}
 
-    function __Dummy1234_init_unchained() internal onlyInitializing {
-    }
+    function __Dummy1234_init_unchained() internal onlyInitializing {}
 }

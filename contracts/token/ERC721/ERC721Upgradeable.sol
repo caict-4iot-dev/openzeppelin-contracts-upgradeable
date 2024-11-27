@@ -18,23 +18,25 @@ import {Initializable} from "../../proxy/utils/Initializable.sol";
  * the Metadata extension, but not including the Enumerable extension, which is available separately as
  * {ERC721Enumerable}.
  */
-abstract contract ERC721Upgradeable is Initializable, ContextUpgradeable, ERC165Upgradeable, IERC721, IERC721Metadata, IERC721Errors {
+abstract contract ERC721Upgradeable is
+    Initializable,
+    ContextUpgradeable,
+    ERC165Upgradeable,
+    IERC721,
+    IERC721Metadata,
+    IERC721Errors
+{
     using Strings for uint256;
 
     /// @custom:storage-location erc7201:openzeppelin.storage.ERC721
     struct ERC721Storage {
         // Token name
         string _name;
-
         // Token symbol
         string _symbol;
-
         mapping(uint256 tokenId => address) _owners;
-
         mapping(address owner => uint256) _balances;
-
         mapping(uint256 tokenId => address) _tokenApprovals;
-
         mapping(address owner => mapping(address operator => bool)) _operatorApprovals;
     }
 
@@ -63,7 +65,9 @@ abstract contract ERC721Upgradeable is Initializable, ContextUpgradeable, ERC165
     /**
      * @dev See {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165Upgradeable, IERC165) returns (bool) {
+    function supportsInterface(
+        bytes4 interfaceId
+    ) public view virtual override(ERC165Upgradeable, IERC165) returns (bool) {
         return
             interfaceId == type(IERC721).interfaceId ||
             interfaceId == type(IERC721Metadata).interfaceId ||

@@ -18,22 +18,28 @@ import {Initializable} from "../../proxy/utils/Initializable.sol";
  * See https://eips.ethereum.org/EIPS/eip-1155
  * Originally based on code by Enjin: https://github.com/enjin/erc-1155
  */
-abstract contract ERC1155Upgradeable is Initializable, ContextUpgradeable, ERC165Upgradeable, IERC1155, IERC1155MetadataURI, IERC1155Errors {
+abstract contract ERC1155Upgradeable is
+    Initializable,
+    ContextUpgradeable,
+    ERC165Upgradeable,
+    IERC1155,
+    IERC1155MetadataURI,
+    IERC1155Errors
+{
     using Arrays for uint256[];
     using Arrays for address[];
 
     /// @custom:storage-location erc7201:openzeppelin.storage.ERC1155
     struct ERC1155Storage {
         mapping(uint256 id => mapping(address account => uint256)) _balances;
-
         mapping(address account => mapping(address operator => bool)) _operatorApprovals;
-
         // Used as the URI for all token types by relying on ID substitution, e.g. https://token-cdn-domain/{id}.json
         string _uri;
     }
 
     // keccak256(abi.encode(uint256(keccak256("openzeppelin.storage.ERC1155")) - 1)) & ~bytes32(uint256(0xff))
-    bytes32 private constant ERC1155StorageLocation = 0x88be536d5240c274a3b1d3a1be54482fd9caa294f08c62a7cde569f49a3c4500;
+    bytes32 private constant ERC1155StorageLocation =
+        0x88be536d5240c274a3b1d3a1be54482fd9caa294f08c62a7cde569f49a3c4500;
 
     function _getERC1155Storage() private pure returns (ERC1155Storage storage $) {
         assembly {
@@ -55,7 +61,9 @@ abstract contract ERC1155Upgradeable is Initializable, ContextUpgradeable, ERC16
     /**
      * @dev See {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165Upgradeable, IERC165) returns (bool) {
+    function supportsInterface(
+        bytes4 interfaceId
+    ) public view virtual override(ERC165Upgradeable, IERC165) returns (bool) {
         return
             interfaceId == type(IERC1155).interfaceId ||
             interfaceId == type(IERC1155MetadataURI).interfaceId ||

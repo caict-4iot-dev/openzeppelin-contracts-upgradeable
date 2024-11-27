@@ -1,7 +1,7 @@
 {
   "name": "@openzeppelin-bif/contracts-upgradeable",
   "description": "Secure Smart Contract library for bif Solidity",
-  "version": "5.0.1-1",
+  "version": "1.1.0",
   "files": [
     "**/*.sol",
     "/build/contracts/*.json",
@@ -30,6 +30,6 @@
   },
   "homepage": "",
   "peerDependencies": {
-    "@openzeppelin/contracts": "5.0.1-1"
+    "@openzeppelin-bif/contracts": "^1.1.0"
   }
 }

@@ -62,11 +62,10 @@ abstract contract UUPSUpgradeable is Initializable, IERC1822Proxiable {
         _;
     }
 
-    function __UUPSUpgradeable_init() internal onlyInitializing {
-    }
+    function __UUPSUpgradeable_init() internal onlyInitializing {}
 
-    function __UUPSUpgradeable_init_unchained() internal onlyInitializing {
-    }
+    function __UUPSUpgradeable_init_unchained() internal onlyInitializing {}
+
     /**
      * @dev Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the
      * implementation. It is used to validate the implementation's compatibility when performing an upgrade.

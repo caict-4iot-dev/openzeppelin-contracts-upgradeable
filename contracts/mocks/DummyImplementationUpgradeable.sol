@@ -7,11 +7,10 @@ import {StorageSlot} from "@openzeppelin-bif/contracts/utils/StorageSlot.sol";
 import {Initializable} from "../proxy/utils/Initializable.sol";
 
 abstract contract ImplUpgradeable is Initializable {
-    function __Impl_init() internal onlyInitializing {
-    }
+    function __Impl_init() internal onlyInitializing {}
 
-    function __Impl_init_unchained() internal onlyInitializing {
-    }
+    function __Impl_init_unchained() internal onlyInitializing {}
+
     function version() public pure virtual returns (string memory);
 }
 
@@ -20,11 +19,10 @@ contract DummyImplementationUpgradeable is Initializable {
     string public text;
     uint256[] public values;
 
-    function __DummyImplementation_init() internal onlyInitializing {
-    }
+    function __DummyImplementation_init() internal onlyInitializing {}
 
-    function __DummyImplementation_init_unchained() internal onlyInitializing {
-    }
+    function __DummyImplementation_init_unchained() internal onlyInitializing {}
+
     function initializeNonPayable() public {
         value = 10;
     }
@@ -66,11 +64,10 @@ contract DummyImplementationUpgradeable is Initializable {
 }
 
 contract DummyImplementationV2Upgradeable is Initializable, DummyImplementationUpgradeable {
-    function __DummyImplementationV2_init() internal onlyInitializing {
-    }
+    function __DummyImplementationV2_init() internal onlyInitializing {}
 
-    function __DummyImplementationV2_init_unchained() internal onlyInitializing {
-    }
+    function __DummyImplementationV2_init_unchained() internal onlyInitializing {}
+
     function migrate(uint256 newVal) public payable {
         value = newVal;
     }

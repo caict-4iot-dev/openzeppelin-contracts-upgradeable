@@ -3,7 +3,7 @@
 
 pragma solidity ^0.8.20;
 
-import {IERC165} from "@openzeppelin-xinghuo/contracts/utils/introspection/IERC165.sol";
+import {IERC165} from "@openzeppelin-bif/contracts/utils/introspection/IERC165.sol";
 import {Initializable} from "../../proxy/utils/Initializable.sol";
 
 /**
@@ -19,11 +19,10 @@ import {Initializable} from "../../proxy/utils/Initializable.sol";
  * ```
  */
 abstract contract ERC165Upgradeable is Initializable, IERC165 {
-    function __ERC165_init() internal onlyInitializing {
-    }
+    function __ERC165_init() internal onlyInitializing {}
 
-    function __ERC165_init_unchained() internal onlyInitializing {
-    }
+    function __ERC165_init_unchained() internal onlyInitializing {}
+
     /**
      * @dev See {IERC165-supportsInterface}.
      */
